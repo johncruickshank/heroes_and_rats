@@ -1,4 +1,5 @@
-var Food = require("./food.js")
+var Food = require("./food.js");
+var _ = require("lodash");
 
 var Hero = function(name, faveFood) {
   this.name = name;
@@ -19,6 +20,14 @@ Hero.prototype = {
     } else {
       this.health += food.replenishmentValue;
     };
+  },
+
+  addTask: function(task) {
+    this.tasks.push(task);
+  },
+
+  prioritiseTasks: function() {
+    return this.tasks = _.orderBy(this.tasks, ["urgency", "difficulty", "reward"], ["desc", "asc", "desc"]);
   }
 
 
