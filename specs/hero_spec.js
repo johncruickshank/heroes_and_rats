@@ -45,5 +45,4 @@ describe("Hero", function(){
       hero.prioritiseTasks();
       assert.deepStrictEqual(hero.tasks, [task3, task2, task1]);
     });
-
 });
